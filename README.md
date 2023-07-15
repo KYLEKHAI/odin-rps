@@ -1,2 +1,2 @@
 # odin-rps
-(Rock Paper Scissors Project (in JavaScript)
+(Rock Paper Scissors Project (in JavaScript))
