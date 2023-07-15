@@ -63,11 +63,11 @@ function game() {
   }
 
   if (playerWins > computerWins) {
-    console.log("You are the winner!");
+    console.log("YOU ARE THE GAME WINNER!");
   } else if (computerWins > playerWins) {
-    console.log("Computer is the winner!");
+    console.log("YOU ARE THE GAME LOSER!");
   } else {
-    console.log("It's a tie!");
+    console.log("NO WINNER. TIE GAME!");
   }
 }
 
