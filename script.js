@@ -78,6 +78,9 @@ function updateDisplay(result) {
 
 // New playRound function
 function playRound(playerSelection) {
+  if (playerWins === 5 || computerWins === 5) {
+    return; // Player has already won or lost, exit the function
+  }
   const computerSelection = getComputerChoice(getRandomInt(3));
   const result = getResult(playerSelection, computerSelection);
 
