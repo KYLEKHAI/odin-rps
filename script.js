@@ -13,7 +13,60 @@ function getComputerChoice(ranNum) {
   }
 }
 
-function playRound(playerSelection, computerSelection) {
+// Initializing player and computer values
+let playerWins = 0;
+let computerWins = 0;
+
+// Creating buttons for UI
+const rockButton = document.createElement("button");
+rockButton.textContent = "ROCK";
+
+const paperButton = document.createElement("button");
+paperButton.textContent = "PAPER";
+
+const scissorsButton = document.createElement("button");
+scissorsButton.textContent = "SCISSORS";
+
+// Creating div for UI
+const divResult = document.createElement("div");
+
+// Adding event listeners
+rockButton.addEventListener("click", function () {
+  playRound("ROCK");
+});
+
+paperButton.addEventListener("click", function () {
+  playRound("PAPER");
+});
+
+scissorsButton.addEventListener("click", function () {
+  playRound("SCISSORS");
+});
+
+// Updating result display
+function updateDisplay(result) {
+  divResult.textContent = result;
+  if (playerWins === 5) {
+    divResult.textContent += "*** YOU WIN THE GAME! ***";
+  } else if (computerWins === 5) {
+    divResult.textContent += "*** YOU LOSE THE GAME ***";
+  }
+}
+
+// New playRound function
+function playRound(playerSelection) {
+  const computerSelection = getComputerChoice(getRandomInt(3));
+  const result = getResult(playerSelection, computerSelection);
+
+  if (result.includes("YOU WIN")) {
+    playerWins++;
+  } else if (result.includes("YOU LOSE")) {
+    computerWins++;
+  }
+  updateDisplay(result);
+}
+
+function getResult(playerSelection, computerSelection) {
   if (playerSelection.toUpperCase() === computerSelection.toUpperCase()) {
     return "TIE GAME";
   } else if (
@@ -42,30 +95,8 @@ function playRound(playerSelection, computerSelection) {
   }
 }
 
-function game() {
-  //Initializing player and computer values
-  let playerWins = 0;
-  let computerWins = 0;
-
-  const playerSelection = prompt("CHOOSE BETWEEN ROCK PAPER OR SCISSORS?");
-  const computerSelection = getComputerChoice(getRandomInt(3));
-
-  const result = playRound(playerSelection, computerSelection);
-  console.log(result);
-
-  if (result.includes("YOU WIN")) {
-    playerWins++;
-  } else if (result.includes("YOU LOSE")) {
-    computerWins++;
-  }
-}
-
-if (playerWins > computerWins) {
-  console.log("YOU ARE THE GAME WINNER!");
-} else if (computerWins > playerWins) {
-  console.log("YOU ARE THE GAME LOSER!");
-} else {
-  console.log("NO WINNER. TIE GAME!");
-}
-
-game();
+// Append the buttons and divResult to the document body
+document.body.appendChild(rockButton);
+document.body.appendChild(paperButton);
+document.body.appendChild(scissorsButton);
+document.body.appendChild(divResult);
