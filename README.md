@@ -42,6 +42,7 @@ To run the Rock Paper Scissors game locally, follow these steps:
 
 Method 1:
 Click the link below:
+https://kylekhai.github.io/odin-rps/
 
 Method 2:
 Download or clone the project repository from GitHub.
