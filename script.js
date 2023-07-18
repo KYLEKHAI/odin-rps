@@ -29,6 +29,7 @@ scissorsButton.textContent = "SCISSORS";
 
 // Creating div for UI
 const divResult = document.createElement("div");
+const divCounter = document.createElement("div");
 
 // Adding event listeners
 rockButton.addEventListener("click", function () {
@@ -51,6 +52,7 @@ function updateDisplay(result) {
   } else if (computerWins === 5) {
     divResult.textContent += "*** YOU LOSE THE GAME ***";
   }
+  divCounter.textContent = `Player: ${playerWins} - Computer: ${computerWins}`;
 }
 
 // New playRound function
@@ -100,3 +102,4 @@ document.body.appendChild(rockButton);
 document.body.appendChild(paperButton);
 document.body.appendChild(scissorsButton);
 document.body.appendChild(divResult);
+document.body.appendChild(divCounter);
