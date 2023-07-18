@@ -9,12 +9,13 @@ The project consists of an HTML file (index.html), a CSS file (style.css), and a
 HTML Structure
 The index.html file contains the following elements:
 
-<h1>: The heading displaying the title of the game.
-<p>: A description of the game rules and objective.
-<img>: An animated GIF illustrating the game.
-<div class="announcements">: A fixed position div at the bottom of the page showing announcements.
-<span class="ticker">: A ticker element within the announcements div.
-<marquee class="news-content">: The content of the ticker, displaying copyright information.
+- The heading displaying the title of the game.
+- A description of the game rules and objective.
+- An animated GIF illustrating the game.
+- A fixed position div at the bottom of the page showing announcements.
+- A ticker element within the announcements div.
+- The content of the ticker, displaying copyright information.
+
 CSS Styling
 The style.css file defines the styling for various elements in the game. It includes the following CSS properties:
 
