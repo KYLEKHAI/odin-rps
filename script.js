@@ -24,6 +24,7 @@ rockButton.style.color = "white";
 rockButton.style.backgroundColor = "black";
 rockButton.style.width = "100px";
 rockButton.style.height = "50px";
+rockButton.style.margin = "10px";
 
 const paperButton = document.createElement("button");
 paperButton.textContent = "PAPER";
@@ -31,6 +32,7 @@ paperButton.style.color = "white";
 paperButton.style.backgroundColor = "black";
 paperButton.style.width = "100px";
 paperButton.style.height = "50px";
+paperButton.style.margin = "10px";
 
 const scissorsButton = document.createElement("button");
 scissorsButton.textContent = "SCISSORS";
@@ -38,9 +40,12 @@ scissorsButton.style.color = "white";
 scissorsButton.style.backgroundColor = "black";
 scissorsButton.style.width = "100px";
 scissorsButton.style.height = "50px";
+scissorsButton.style.margin = "10px";
 
 // Creating div for UI
 const divResult = document.createElement("div");
+divResult.style.fontWeight = "bold";
+
 const divCounter = document.createElement("div");
 divCounter.style.fontWeight = "bold";
 
@@ -57,15 +62,6 @@ scissorsButton.addEventListener("click", function () {
   playRound("SCISSORS");
 });
 
-//Creating center for buttons
-const centerButtons = document.querySelectorAll("button");
-
-// Center the choice buttons
-centerButtons.forEach((button) => {
-  button.style.display = "block";
-  button.style.margin = "0 auto";
-});
-
 // Apply background color to the document
 document.body.style.backgroundColor = "lightgreen";
 
@@ -73,9 +69,9 @@ document.body.style.backgroundColor = "lightgreen";
 function updateDisplay(result) {
   divResult.textContent = result;
   if (playerWins === 5) {
-    divResult.textContent += "*** YOU WIN THE GAME! ***";
+    divResult.innerHTML += "<br>*** YOU WIN THE GAME! ***";
   } else if (computerWins === 5) {
-    divResult.textContent += "*** YOU LOSE THE GAME ***";
+    divResult.innerHTML += "<br>*** YOU LOSE THE GAME ***";
   }
   divCounter.textContent = `Player: ${playerWins} - Computer: ${computerWins}`;
 }
