@@ -47,28 +47,25 @@ function game() {
   let playerWins = 0;
   let computerWins = 0;
 
-  //For loop playing 5 rounds of the game
-  for (let i = 0; i < 5; i++) {
-    const playerSelection = prompt("CHOOSE BETWEEN ROCK PAPER OR SCISSORS?");
-    const computerSelection = getComputerChoice(getRandomInt(3));
+  const playerSelection = prompt("CHOOSE BETWEEN ROCK PAPER OR SCISSORS?");
+  const computerSelection = getComputerChoice(getRandomInt(3));
 
-    const result = playRound(playerSelection, computerSelection);
-    console.log(result);
+  const result = playRound(playerSelection, computerSelection);
+  console.log(result);
 
-    if (result.includes("YOU WIN")) {
-      playerWins++;
-    } else if (result.includes("YOU LOSE")) {
-      computerWins++;
-    }
+  if (result.includes("YOU WIN")) {
+    playerWins++;
+  } else if (result.includes("YOU LOSE")) {
+    computerWins++;
   }
+}
 
-  if (playerWins > computerWins) {
-    console.log("YOU ARE THE GAME WINNER!");
-  } else if (computerWins > playerWins) {
-    console.log("YOU ARE THE GAME LOSER!");
-  } else {
-    console.log("NO WINNER. TIE GAME!");
-  }
+if (playerWins > computerWins) {
+  console.log("YOU ARE THE GAME WINNER!");
+} else if (computerWins > playerWins) {
+  console.log("YOU ARE THE GAME LOSER!");
+} else {
+  console.log("NO WINNER. TIE GAME!");
 }
 
 game();
