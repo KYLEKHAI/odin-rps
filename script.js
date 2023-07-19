@@ -66,7 +66,7 @@ scissorsButton.addEventListener("click", function () {
 document.body.style.backgroundColor = "lightgreen";
 
 // Updating result display
-function updateDisplay(result) {
+function updateDisplay(result, playerChoice, computerChoice) {
   divResult.textContent = result;
   if (playerWins === 5) {
     divResult.innerHTML += "<br>*** YOU WIN THE GAME! ***";
@@ -74,6 +74,15 @@ function updateDisplay(result) {
     divResult.innerHTML += "<br>*** YOU LOSE THE GAME ***";
   }
   divCounter.textContent = `Player: ${playerWins} - Computer: ${computerWins}`;
+
+  // Add the player and computer choices to the display
+  const playerChoiceDiv = document.createElement("div");
+  playerChoiceDiv.textContent = `Player chose: ${playerChoice}`;
+  const computerChoiceDiv = document.createElement("div");
+  computerChoiceDiv.textContent = `Computer chose: ${computerChoice}`;
+
+  divResult.appendChild(playerChoiceDiv);
+  divResult.appendChild(computerChoiceDiv);
 }
 
 // New playRound function
@@ -89,7 +98,7 @@ function playRound(playerSelection) {
   } else if (result.includes("YOU LOSE")) {
     computerWins++;
   }
-  updateDisplay(result);
+  updateDisplay(result, playerSelection, computerSelection);
 }
 
 function getResult(playerSelection, computerSelection) {
